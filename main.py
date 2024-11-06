@@ -5,13 +5,15 @@ kcal_per_elf = {}
 kcal = 0
 
 with open("text.txt", "r") as file:             #Open text.txt file with the number of kcal the elves are carrying
+
         for x in range(1,9999):                 #Iterate through the total of kcal per elf
+
             for y in range(1, 9999):            #Iterate through the list of kcal per snack
                 line = file.readline()          #Read file line per line and store value in "line"
                 line = line.strip()             #Strip eventual spaces
+
                 if line != "":                  #Count the kcal if line is not blank
                     kcal += int(line)
-
                 else:                           #Store the kcal in dictionary and skip the line if line is blank
                     kcal_per_elf[x] = kcal
                     kcal = 0
@@ -28,4 +30,4 @@ top3_elf = max(kcal_per_elf.values())                           #The top 3 elf h
 top3_total = top1_elf + top2_elf + top3_elf                     #Count sum of top 3 elves
 
 print(top1_elf)                                    #Answer Star 1
-print(top3_total)                                  #Answer Start 2
+print(top3_total)                                  #Answer Star 2
